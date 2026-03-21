@@ -1,0 +1,13 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+data/raw/
+reports/
+*.html
+pipeline/__pycache__/
+scheduler/__pycache__/
+dashboard/__pycache__/
+venv/
+.venv/
+*.log
