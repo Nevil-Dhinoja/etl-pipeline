@@ -1,0 +1,15 @@
+pandas
+sqlalchemy
+psycopg2-binary
+great-expectations
+apscheduler
+jinja2
+streamlit
+requests
+faker
+langchain-groq
+python-dotenv
+matplotlib
+seaborn
+numpy
+scipy

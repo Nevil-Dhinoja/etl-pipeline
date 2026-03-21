@@ -1,0 +1,11 @@
+product,stock_quantity,reorder_level,warehouse,last_updated,unit_cost
+Laptop,85,12,WH-A,2026-02-20,3535.51
+Phone,406,47,WH-C,2026-02-28,3977.18
+Tablet,0,40,WH-C,2026-02-26,715.55
+Headphones,299,48,WH-B,2026-03-04,1239.11
+Camera,61,19,WH-C,2026-02-25,4909.21
+Keyboard,202,33,WH-A,2026-02-20,3962.95
+Monitor,404,15,WH-A,2026-03-03,3806.82
+Mouse,124,25,WH-B,2026-03-04,4046.07
+Speaker,4,20,WH-C,2026-03-17,2248.72
+Charger,496,41,WH-A,2026-02-27,1044.53
