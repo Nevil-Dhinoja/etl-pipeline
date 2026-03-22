@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=venom&color=gradient&customColorList=6,12,20,24&height=280&section=header&text=AI-Powered%20ETL%20Pipeline&fontSize=58&fontColor=fff&fontAlignY=42&desc=Extract%20%C2%B7%20Validate%20%C2%B7%20Transform%20%C2%B7%20Load%20%C2%B7%20Detect%20%C2%B7%20Report%20%C2%B7%20Schedule&descAlignY=62&descSize=16&descColor=fff&animation=twinkling" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=venom&color=4CAF50&height=280&section=header&text=AI-Powered%20ETL%20Pipeline&fontSize=58&fontColor=fff&fontAlignY=42&desc=Extract%20%C2%B7%20Validate%20%C2%B7%20Transform%20%C2%B7%20Load%20%C2%B7%20Detect%20%C2%B7%20Report%20%C2%B7%20Schedule&descAlignY=62&descSize=16&descColor=fff&animation=twinkling" width="100%"/>
 
 <br/>
 
@@ -442,6 +442,9 @@ MIT — free to use, fork and build on.
 
 <div align="center">
 
+
+<br/>
+
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
 <td width="180" align="center" valign="top">
@@ -453,11 +456,11 @@ MIT — free to use, fork and build on.
 <td valign="middle">
 
 <h2 align="left">Nevil Dhinoja</h2>
-<p align="left"><i>AI / ML Engineer &nbsp;·&nbsp; Data Engineer &nbsp;·&nbsp; Gujarat, India</i></p>
+<p align="left"><i>AI / ML Engineer &nbsp;·&nbsp; Full-Stack Developer &nbsp;·&nbsp; Gujarat, India</i></p>
 <p align="left">
 I build AI systems that are practical, deployable, and free to run.<br/>
 This project is part of a larger series of open-source AI tools — each one<br/>
-designed to teach a real industry concept through a working, shippable product.
+designed to teach a real concept through a working, shippable product.
 </p>
 
 </td>
@@ -468,40 +471,20 @@ designed to teach a real industry concept through a working, shippable product.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Nevil%20Dhinoja-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/nevil-dhinoja)
 [![GitHub](https://img.shields.io/badge/GitHub-Nevil--Dhinoja-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Nevil-Dhinoja)
-[![Gmail](https://img.shields.io/badge/Email-your%40email.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your@email.com)
+[![Gmail](https://img.shields.io/badge/Email-nevil%40email.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:dhinoja.nevil@email.com)
 
 <br/>
 
-<img src="https://github-readme-stats.vercel.app/api?username=Nevil-Dhinoja&show_icons=true&theme=tokyonight&hide_border=true&title_color=4CAF50&icon_color=4CAF50&bg_color=0D1117&text_color=CDD6F4" height="160"/>
+If this project helped you or saved you time, a star on the repo goes a long way.
+
+<br/>
+
+[![Star this repo](https://img.shields.io/github/stars/Nevil-Dhinoja/voice-sql-assistant?style=for-the-badge&color=F55036)](https://github.com/Nevil-Dhinoja/data-analyst-agent)
 &nbsp;
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=Nevil-Dhinoja&theme=tokyonight&hide_border=true&ring=4CAF50&fire=4CAF50&currStreakLabel=4CAF50&background=0D1117&sideLabels=CDD6F4&dates=888888" height="160"/>
-
-<br/><br/>
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Nevil-Dhinoja&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=4CAF50&line=4CAF50&point=FFFFFF&area=true" width="100%"/>
+[![Fork](https://img.shields.io/github/forks/Nevil-Dhinoja/voice-sql-assistant?style=for-the-badge&color=gray)](https://github.com/Nevil-Dhinoja/data-analyst-agent/fork)
 
 <br/>
 
----
-
-> *"I don't just learn tools — I build things with them."*
-
----
-
-<br/>
-
-If this project helped you, a star on the repo goes a long way.
-
-<br/>
-
-[![Star this repo](https://img.shields.io/github/stars/Nevil-Dhinoja/etl-pipeline?style=for-the-badge&color=2E7D32&label=Star%20this%20repo&logo=github&labelColor=0D1117)](https://github.com/Nevil-Dhinoja/etl-pipeline)
-&nbsp;
-[![Fork](https://img.shields.io/github/forks/Nevil-Dhinoja/etl-pipeline?style=for-the-badge&color=555&label=Fork%20it&logo=github&labelColor=0D1117)](https://github.com/Nevil-Dhinoja/etl-pipeline/fork)
-&nbsp;
-[![More Projects](https://img.shields.io/badge/More%20Projects-Nevil--Dhinoja-2E7D32?style=for-the-badge&logo=github&labelColor=0D1117)](https://github.com/Nevil-Dhinoja)
-
-<br/>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,12,20,24&height=150&section=footer&text=Thanks%20for%20visiting&fontSize=28&fontColor=ffffff&fontAlignY=68&animation=twinkling" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=4CAF50&height=150&section=footer&fontAlignY=68&animation=twinkling" width="100%"/>
 
 </div>
