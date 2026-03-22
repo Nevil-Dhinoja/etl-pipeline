@@ -302,7 +302,121 @@ The seed data includes intentional problems so every pipeline run demonstrates r
 - [ ] Deploy to Railway / Render
 
 ---
+# Why Downgrading One Validation Check Made Corrupt Data Disappear — Completely
 
+I built a 7-stage ETL pipeline. One of those stages validates data quality before transformation — each check is labelled either critical or warning. Critical failures halt the pipeline. Warnings log and continue.
+
+I changed one word. `"critical"` to `"warning"` on the negative price check. Then I ran the pipeline and looked for the corrupt row in PostgreSQL.
+
+It was not there.
+
+---
+
+## The setup
+
+The seed data intentionally includes a row with `unit_price = -100` — a negative price that should never exist in a sales database. The validation check that catches it:
+
+```python
+_check(result, "positive_unit_price",
+       (df["unit_price"] > 0).all(),
+       "critical",              # ← I changed this to "warning"
+       "All unit prices are positive",
+       f"{(df['unit_price'] <= 0).sum()} non-positive prices found")
+```
+
+With `"critical"`, the pipeline logs `CRITICAL — positive_unit_price: 1 non-positive prices found` and halts. Nothing loads.
+
+With `"warning"`, the pipeline logs a warning and continues to the transform stage.
+
+---
+
+## What I expected
+
+The -100 row to land in PostgreSQL with a negative unit_price. Easy to find, easy to document.
+
+---
+
+## What actually happened
+
+```sql
+SELECT unit_price FROM sales WHERE unit_price <= 0;
+
+ unit_price
+------------
+(0 rows)
+```
+
+Zero rows. The corrupt data was not in the database. Not with a negative price. Not at all as a bad row. The database looked perfectly clean.
+
+---
+
+## Why this is more dangerous than a failed insert
+
+The transform stage has its own fix for negative prices:
+
+```python
+# pipeline/transform.py
+median_price = df.loc[df["unit_price"] > 0, "unit_price"].median()
+neg_mask     = df["unit_price"] <= 0
+df.loc[neg_mask, "unit_price"] = median_price
+```
+
+When validation let the corrupt row through, transform caught it and replaced -100 with the median price — Rs.5,243. The row loaded into PostgreSQL looking completely normal. A legitimate order with a reasonable price.
+
+Three layers of silence:
+
+1. Validation allowed it through — severity was warning, not critical
+2. Transform fixed it — replaced corrupt value with median, no loud log
+3. Database shows clean data — an analyst querying sales would never know this row had a corrupt source value
+
+The lineage table records the `fix_negative` operation. But you would have to know to look there. Nothing in the pipeline output, the report, or the database itself indicates that this row's source value was -100.
+
+---
+
+## The fix
+
+Two changes. First, restore the validation severity:
+
+```python
+_check(result, "positive_unit_price",
+       (df["unit_price"] > 0).all(),
+       "critical",   # never downgrade this
+       ...)
+```
+
+Second, make the transform stage loud about corrupt-origin rows:
+
+```python
+# pipeline/transform.py
+neg_count = neg_mask.sum()
+df.loc[neg_mask, "unit_price"] = median_price
+
+if neg_count > 0:
+    log.warning(
+        f"CORRUPT INPUT: {neg_count} rows had negative unit_price "
+        f"in source data. Values replaced with median={round(median_price,2)}. "
+        f"Source data should be investigated."
+    )
+```
+
+The transform fix is still applied — idempotency is preserved. But now there is an explicit warning in the logs that corrupt source data entered the pipeline. An analyst can trace it. A monitoring alert can fire on it.
+
+---
+
+## The lesson
+
+Validation severity is not a formatting choice. Critical means halt. Warning means continue. The difference is not about how bad the problem is — it is about whether you trust the data enough to load it.
+
+A negative price is not a warning. It is evidence that something upstream is wrong. Loading it, even after fixing it, means you are accepting corrupt source data into your production database and hoping the transform layer catches everything.
+
+It caught it this time. That is not a reason to trust it.
+
+---
+
+*This is Break 2 from the ETL Pipeline Layer 2 experiments.*
+*Full break documentation: [BREAKS.md](https://github.com/Nevil-Dhinoja/etl-pipeline/blob/main/BREAKS.md)*
+*Project: [github.com/Nevil-Dhinoja/etl-pipeline](https://github.com/Nevil-Dhinoja/etl-pipeline)*
+---
 ## The AI Grid
 
 <div align="center">
