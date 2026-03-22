@@ -480,10 +480,6 @@ If this project helped you or saved you time, a star on the repo goes a long way
 
 <br/>
 
-[![Star this repo](https://img.shields.io/github/stars/Nevil-Dhinoja/voice-sql-assistant?style=for-the-badge&color=F55036)](https://github.com/Nevil-Dhinoja/data-analyst-agent)
-&nbsp;
-[![Fork](https://img.shields.io/github/forks/Nevil-Dhinoja/voice-sql-assistant?style=for-the-badge&color=gray)](https://github.com/Nevil-Dhinoja/data-analyst-agent/fork)
-
 <br/>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=4CAF50&height=150&section=footer&fontAlignY=68&animation=twinkling" width="100%"/>
